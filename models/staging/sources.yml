@@ -1,0 +1,28 @@
+version: 2
+
+sources:
+  - name: adventure_works
+    description: This is a replica of the Postgres database used by our client.
+    tables:
+      - name: salesorderheader
+        description: >
+          One record per order. Includes cancelled and deleted orders.
+        columns:
+          - name: salesorderid
+            description: Primary key of the orders table
+            tests:
+              - unique
+              - not_null
+      - name: salesorderdetail
+      - name: salesorderheadersalesreason
+      - name: salesreason
+      - name: creditcard
+      - name: customer
+      - name: person
+      - name: address
+      - name: countryregion
+      - name: stateprovince
+      - name: product
+
+
+

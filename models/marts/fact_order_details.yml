@@ -1,0 +1,33 @@
+version: 2
+
+models:
+  - name: fact_order_details
+    columns:
+      - name: salesorderid
+        tests:
+          - not_null
+          
+      - name: customer_fk
+        tests:
+          - relationships:
+              to: ref('dim_customer')
+              field: customer_sk
+
+      - name: creditcard_fk
+        tests:
+          - relationships:
+              to: ref('dim_creditcard')
+              field: creditcard_sk
+
+      - name: product_fk
+        tests:
+          - relationships:
+              to: ref('dim_product')
+              field: product_sk
+
+      - name: address_fk
+        tests:
+          - relationships:
+              to: ref('dim_address')
+              field: address_sk
+

@@ -1,0 +1,9 @@
+version: 2
+
+models:
+  - name: dim_creditcard
+    columns:
+      - name: creditcard_sk
+        tests:
+          - unique
+          - not_null
